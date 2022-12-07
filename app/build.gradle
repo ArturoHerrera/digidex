@@ -32,7 +32,7 @@ android {
             minifyEnabled false
             debuggable true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            buildConfigField "String", 'base_api_url', '"https://apingweb.com/"'
+            buildConfigField "String", 'base_api_url', '"https://www.digi-api.com/"'
         }
     }
     compileOptions {

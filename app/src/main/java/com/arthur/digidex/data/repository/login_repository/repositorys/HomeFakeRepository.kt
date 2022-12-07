@@ -12,15 +12,15 @@ class HomeFakeRepository(): HomeTasks {
     *  Asi toda tarea declarada en LoginTasks seria testeable.
     */
 
-    override suspend fun checkUserSession(user: String, pass: String): Flow<Boolean> {
+    override suspend fun checkUserSession(page: Int): Flow<Boolean> {
         TODO("Not yet implemented")
     }
 
-    override suspend fun getUser(): User? {
+    /**override suspend fun getUser(): User? {
         TODO("Not yet implemented")
     }
 
     override suspend fun deleteUser() {
         TODO("Not yet implemented")
-    }
+    }*/
 }

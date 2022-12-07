@@ -26,29 +26,15 @@ class HomeViewModel @Inject constructor(
         vmUiState.value
     )
 
-    fun login(email: String, pass: String) {
+    fun login(page: Int) {
         vmUiState.update { it.copy(loading = true, loginSuccess = null) }
         viewModelScope.launch {
             homeTasks
-                .checkUserSession(email, pass)
+                .checkUserSession(page)
                 .collectLatest { result ->
                     vmUiState.update { it.copy(loading = false, loginSuccess = result) }
-                    if(result){
-                        getUserFromLocal()
-                    } else {
-                        deleteUserFromLocal()
-                    }
                 }
         }
     }
 
-    private fun getUserFromLocal(){
-        viewModelScope.launch {
-            val mUser = homeTasks.getUser()
-            vmUiState.update { it.copy(user = mUser) }
-            Log.i("testUser", "User ---> ${Gson().toJson(mUser)}")
-        }
-    }
-
-    private suspend fun deleteUserFromLocal() = homeTasks.deleteUser()
 }

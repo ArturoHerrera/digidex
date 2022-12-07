@@ -5,10 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.arthur.digidex.data.local.room.UserDao
-import com.arthur.digidex.data.local.room.UserEntity
+import com.arthur.digidex.data.local.room.DigimonEntity
 
 @Database(entities = [
-    UserEntity::class
+    DigimonEntity::class
 ], version = 1, exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 

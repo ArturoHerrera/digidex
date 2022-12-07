@@ -63,7 +63,7 @@ fun HomeScreen(
                         horizontalArrangement = Arrangement.SpaceBetween
                     ) {
                         Button(
-                            onClick = { viewModel.login("superman@gmail.com", "123456") }
+                            onClick = { viewModel.login(0) }
                         ) {
                             Text(text = "Fake success login")
                         }
@@ -71,7 +71,7 @@ fun HomeScreen(
                         Spacer(modifier = Modifier.width(16.dp))
 
                         Button(
-                            onClick = { viewModel.login("fakeemail@gmail.com", "123456fakepass") }
+                            onClick = { viewModel.login(0) }
                         ) {
                             Text(text = "Fake failed login")
                         }

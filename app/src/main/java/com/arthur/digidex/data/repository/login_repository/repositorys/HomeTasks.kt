@@ -13,12 +13,11 @@ interface HomeTasks {
     */
 
     suspend fun checkUserSession(
-        user: String,
-        pass: String
+        page: Int
     ): Flow<Boolean>
 
-    suspend fun getUser(): User?
+    /*suspend fun getUser(): User?
 
-    suspend fun deleteUser()
+    suspend fun deleteUser()*/
 
 }

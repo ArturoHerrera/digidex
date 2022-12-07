@@ -2,9 +2,9 @@ package com.arthur.digidex.data.repository.login_repository.local_data_sources
 
 import com.arthur.digidex.core.AppPreferences
 import com.arthur.digidex.data.local.room.UserDao
-import com.arthur.digidex.data.local.room.UserEntity
+import com.arthur.digidex.data.local.room.DigimonEntity
 import com.arthur.digidex.data.model.User
-import com.arthur.digidex.data.remote.dto.AuthResponseDto
+import com.arthur.digidex.data.remote.dto.DigiResponseDto
 import com.arthur.digidex.data.repository.login_repository.repositorys.LoginLocalDataSource
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
@@ -15,10 +15,10 @@ class LoginRoomLocalDataSource(
     private val dao: UserDao
 ) : LoginLocalDataSource {
 
-    override fun getUserToken(user: String): String? = pref.getUserToken()
+    /*override fun getUserToken(user: String): String? = pref.getUserToken()
 
-    override suspend fun setUser(userDto: AuthResponseDto): User? {
-        val entity = UserEntity(userDto)
+    override suspend fun setUser(userDto: DigiResponseDto): User? {
+        val entity = DigimonEntity(userDto)
         dao.insertUser(entity)
         return User(entity)
     }
@@ -30,5 +30,5 @@ class LoginRoomLocalDataSource(
         .first()
 
     override suspend fun deleteUser() = dao
-        .deleteUser()
+        .deleteUser()*/
 }
